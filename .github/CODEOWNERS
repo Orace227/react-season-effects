@@ -1,0 +1,26 @@
+# Default owners for everything
+* @Orace227
+
+# Library source code
+/packages/react-season-effects/src/ @Orace227
+
+# Core utilities
+/packages/react-season-effects/src/core/ @Orace227
+
+# Effects
+/packages/react-season-effects/src/effects/ @Orace227
+
+# Documentation
+*.md @Orace227
+/docs/ @Orace227
+
+# CI/CD and workflows
+/.github/ @Orace227
+
+# Configuration files
+*.json @Orace227
+*.js @Orace227
+*.yml @Orace227
+
+# Demo application
+/apps/demo/ @Orace227
