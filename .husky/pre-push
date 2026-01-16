@@ -1,0 +1,28 @@
+echo "Running pre-push checks..."
+
+# Type checking
+echo "→ Type checking..."
+npm run type-check
+if [ $? -ne 0 ]; then
+  echo "❌ Type check failed. Push aborted."
+  exit 1
+fi
+
+# Build checking
+echo "→ Building project..."
+npm run build
+if [ $? -ne 0 ]; then
+  echo "❌ Build failed. Push aborted."
+  exit 1
+fi
+
+# Vulnerability audit
+echo "→ Running security audit..."
+npm audit --audit-level=moderate
+if [ $? -ne 0 ]; then
+  echo "⚠️  Security vulnerabilities found. Please review."
+  echo "Run 'npm audit fix' to fix them."
+  exit 1
+fi
+
+echo "✅ All pre-push checks passed!"
